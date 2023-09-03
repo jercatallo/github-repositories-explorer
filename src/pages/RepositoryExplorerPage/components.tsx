@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faChevronDown, faChevronUp, faStar } from "@fortawesome/free-solid-svg-icons"
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { motion } from 'framer-motion';
 import { GithubUserComponentType, ListUsersType, RepositoriesComponentType } from "./types"
 import { GitHubRepository } from "../../services/Github/types"
@@ -9,6 +9,10 @@ import { messages } from "./messages"
 
 export const ListUsers: ListUsersType = ({ result, setIsUserSelected }) => {
   const [showList, setShowList] = useState<string[]>([])
+  
+  useEffect(()=>{
+    setShowList([])
+  },[result])
 
   return (
     <div>

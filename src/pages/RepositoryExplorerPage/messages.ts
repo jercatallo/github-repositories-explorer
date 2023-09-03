@@ -19,4 +19,8 @@ export const messages = defineMessages({
         id: `${scope}.NoRepository`,
         defaultMessage: 'This user doesn\'t have any public repository.',
     },
+    title: {
+        id: `${scope}.Title`,
+        defaultMessage: 'Github Repository Explorer',
+    },
 });

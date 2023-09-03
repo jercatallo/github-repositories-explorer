@@ -100,9 +100,10 @@ const RepositoryExplorerPage: RepositoryExplorerPageType = () => {
   }, [result, setIsUserSelected])
 
   return (
-    <div className="grid max-w-lg p-12 m-auto h-screen overflow-auto content-start" style={{ minWidth: '30rem' }}>
+    <div className="grid max-w-lg p-12 m-auto content-start" style={{ minWidth: '30rem' }}>
       <div className="w-full m-auto">
         <div className=" mb-6">
+          <h1 className='font-bold mb-2 text-gray-600'><FormattedMessage {...messages.title} /></h1>
           <div className="w-full">
             <Input bind={nameInput.bind} placeholder='Enter username'></Input>
           </div>
@@ -116,10 +117,11 @@ const RepositoryExplorerPage: RepositoryExplorerPageType = () => {
           {searchedValue && result.length <= 0 && <p className={`my-2`}><FormattedMessage {...messages.noUsersMatched} /></p>}
           {showError && <p className={`text-red-600 mt-2`}><FormattedMessage {...globalMessages.somethingWentWrong} /></p>}
         </div>
-
+        <div className="w-full m-auto overflow-auto"  style={{height: '68vh'}}>
+        {isLoading && <ColoredCircleLoading wrapperStyle={{ margin: '3em auto auto auto' }}></ColoredCircleLoading>}
         {ListUsersMemo}
 
-        {isLoading && <ColoredCircleLoading wrapperStyle={{ margin: '3em auto auto auto' }}></ColoredCircleLoading>}
+        </div>
       </div>
     </div>
   )
