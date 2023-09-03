@@ -4,6 +4,8 @@ This app is created with React, TypeScript and Vite
 ## Steps to run the application
 1. Clone the repository
 2. Go to the repository via Bash or Command line
+3. Create .env file inside the repository
+4. Add the environments listed below of this README.md to the .env file
 3. To install needed dependencies. Type "yarn" press "enter"
 4. To run the application. Type "yarn dev" press "enter"
 5. The application will run on http://localhost:5173/ and you can open it on a browser.

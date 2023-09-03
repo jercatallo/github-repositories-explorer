@@ -1,0 +1,8 @@
+{
+    "Pages.RepositoryExplorerPage.NoUsersMatched": "No users matched, Try another one!",
+    "Pages.RepositoryExplorerPage.ShowingUsersFor": "Showing users for \"{name}\"",
+    "Pages.RepositoryExplorerPage.NoDescription": "No description for this repository.",
+    "Pages.RepositoryExplorerPage.NoRepository": "This user doesn't have any public repository.",
+
+    "Global.SomethingWentWrong": "Something went wrong please try again!"
+}
