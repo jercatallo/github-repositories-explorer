@@ -39,11 +39,13 @@ const RepositoryExplorerPage: RepositoryExplorerPageType = () => {
       }
       return {
         login: item.login,
-        repositories: item.repositories
+        repositories: item.repositories,
       };
     } catch (err) {
       setShowError(true);
-      return false
+      return {
+        isError: true,
+      }
     }
   }
 
@@ -56,7 +58,7 @@ const RepositoryExplorerPage: RepositoryExplorerPageType = () => {
             per_page: Number(ENVIRONMENTS.GITHUB_API_USER_PER_PAGE_LIMIT)
           }
         })
-
+      
         let formattedResult: FormattedResult[] = [];
 
         if (fetchGithubUsersRes) {
@@ -64,7 +66,7 @@ const RepositoryExplorerPage: RepositoryExplorerPageType = () => {
             fetchGithubUsersRes.items.map(async (item: GitHubUser) => formatUserObject({ item }))
           )) as FormattedResult[];
 
-          if (formattedResult.includes(false)) {
+          if (formattedResult.some(result => result.isError === true)) {
             setShowError(true);
             return;
           }

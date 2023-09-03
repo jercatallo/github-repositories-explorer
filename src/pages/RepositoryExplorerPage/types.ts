@@ -22,8 +22,9 @@ export type GithubUserComponentProps = {
   }
 
 export type FormattedResult = {
-    login: string;
+    login?: string;
     repositories?: GitHubRepository[];
+    isError?: boolean
   };
 
 export type RepositoriesComponentProps = {
