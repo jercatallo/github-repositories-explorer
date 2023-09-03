@@ -64,6 +64,11 @@ const RepositoryExplorerPage: RepositoryExplorerPageType = () => {
             fetchGithubUsersRes.items.map(async (item: GitHubUser) => formatUserObject({ item }))
           )) as FormattedResult[];
 
+          if (formattedResult.includes(false)) {
+            setShowError(true);
+            return;
+          }
+
           setResult(formattedResult);
           setSeachedValue(nameInput.bind.value);
 
@@ -117,9 +122,9 @@ const RepositoryExplorerPage: RepositoryExplorerPageType = () => {
           {searchedValue && result.length <= 0 && <p className={`my-2`}><FormattedMessage {...messages.noUsersMatched} /></p>}
           {showError && <p className={`text-red-600 mt-2`}><FormattedMessage {...globalMessages.somethingWentWrong} /></p>}
         </div>
-        <div className="w-full m-auto overflow-auto"  style={{height: '68vh'}}>
-        {isLoading && <ColoredCircleLoading wrapperStyle={{ margin: '3em auto auto auto' }}></ColoredCircleLoading>}
-        {ListUsersMemo}
+        <div className="w-full m-auto overflow-auto" style={{ height: '68vh' }}>
+          {isLoading && <ColoredCircleLoading wrapperStyle={{ margin: '3em auto auto auto' }}></ColoredCircleLoading>}
+          {ListUsersMemo}
 
         </div>
       </div>
