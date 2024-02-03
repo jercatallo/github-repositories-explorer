@@ -1,6 +1,8 @@
 # React + TypeScript + Vite
 This app is created with React, TypeScript and Vite
 
+Application URL: https://github-repositories-explorer.onrender.com
+
 ## Steps to run the application
 1. Clone the repository
 2. Go to the repository via Bash or Command line
